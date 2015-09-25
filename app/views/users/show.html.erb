@@ -1,0 +1,21 @@
+<% provide(:title, @user.first_name) %>
+<% if @user.user_type == "user" %>
+  <%= render 'shared/my_user_partial' %>
+  <p>
+        <%= @user.first_name%> <%= @user.middle_name%> <%= @user.last_name%>
+  </p>
+<% else %>
+  <%= render 'my_admin_home_page' %>
+  <p>
+        <%= @user.first_name%> <%= @user.middle_name%> <%= @user.last_name%>
+  </p>
+
+<%= form_tag(search_books_url, method: :get) do %>
+    <%= label_tag(:q, "Search for Books, authors, ISBN..:") %>
+    <%= text_field_tag(:q) %>
+
+    <%= submit_tag("Search") %></br></br></br></br>
+    <%= submit_tag("Add new book") %>
+<% end %>
+<% end %>
+

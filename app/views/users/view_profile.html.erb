@@ -1,0 +1,11 @@
+<script> /*<h4 style="text-align:left"><font color = "black" size="5"> Profile details</font><br></h4> */ </script>
+<% provide(:title, @user.first_name) %>
+  <%= render 'shared/my_admin_partial' %>
+  <p><font size="3" color="Green">
+  Name:&nbsp;&nbsp;<%= @user.first_name%><%=@user.middle_name%><br>
+  Email-id:&nbsp;&nbsp;<%= @user.email%><br>
+  Phone Number:&nbsp;&nbsp;<%= @user.phone_number%><br>
+  Address:<br><%= @user.address_street%> , <%= @user.address_house%> <br> 
+  <%=@user.address_state%><br>
+  </font>
+  </p>

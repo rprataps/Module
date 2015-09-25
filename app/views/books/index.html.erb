@@ -1,0 +1,13 @@
+<% provide(:title, 'All members') %>
+  <%= render 'shared/manage_book_partial' %>
+<p>All Books</p>
+
+<%= will_paginate %>
+
+<ul class="books">
+<% @books.each do |book| %>
+  <%= render book %>
+<% end %>
+</ul>
+
+<%= will_paginate %>

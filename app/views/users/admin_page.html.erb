@@ -1,0 +1,18 @@
+<%= form_tag("/search_users", method: "get") do %>
+    <%= label_tag(:q, "Search for Users:") %>
+    <%= text_field_tag(:q) %>
+    <%= check_box_tag(:library_members) %>
+    <%= label_tag(:library_members, " Library Members") %>
+    <%= check_box_tag(:administrators) %>
+    <%= label_tag(:administrators, "Administrators ") %>
+    <%= submit_tag("Search") %> <%= submit_tag("List all Users") %>
+    <%= submit_tag("Add new user") %>
+<% end %>
+
+<%= form_tag("search_books", method: "get") do %>
+    <%= label_tag(:q, "Search for Books, authors, ISBN..:") %>
+    <%= text_field_tag(:q) %>
+
+    <%= submit_tag("Search") %></br></br></br></br>
+    <%= submit_tag("Add new book") %>
+<% end %>

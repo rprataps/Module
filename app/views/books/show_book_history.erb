@@ -1,0 +1,28 @@
+<% bookid=2%>
+<% counter=0%>
+
+
+
+
+<%history=Book.checks_check(bookid)%>
+
+<% history.each do |his|%>
+
+    <%history1=Checkout.checkoutbookque(his.users_id)%>
+
+    <% history1.each do |var|%>
+        </br>
+        <%=var.first_name%> &nbsp; &nbsp; <%=var.last_name%>&nbsp; &nbsp;&nbsp; &nbsp;
+        <% counter=1%>
+    <%end%>
+
+    <%if counter==1%>
+        <%=his.checkout_date%>&nbsp;&nbsp;&nbsp; &nbsp;
+        <%=his.return_date%> &nbsp;&nbsp;&nbsp; &nbsp; <%=his.returned%>
+
+    <%end%>
+<%end%>
+
+<%if counter==0%>
+    <h1>No records found</h1>
+<%end%>

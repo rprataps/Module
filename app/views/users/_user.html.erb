@@ -1,0 +1,8 @@
+<li>
+ <p><font size="3" color='red'> <%= user.first_name %> <%= user.middle_name %> <%= user.last_name%> </font></p>
+  <% if current_user.user_type != "user" && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+    | <%= link_to "view_profile", view_profile_user_path(:id => user.id) %>
+  <% end %>
+</li>

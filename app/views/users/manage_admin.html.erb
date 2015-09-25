@@ -1,0 +1,13 @@
+<% provide(:title, current_user.first_name) %>
+<%= render 'shared/manage_admin_partial' %>
+<% if current_user.user_type == "user" %>
+  <p>
+        <%= current_user.first_name%> <%= current_user.middle_name%> <%= current_user.last_name%>
+  </p>
+<% else %>
+  <p>
+        <%= current_user.first_name%> <%= current_user.middle_name%> <%= current_user.last_name%>
+  </p>
+<% end %>
+
+
