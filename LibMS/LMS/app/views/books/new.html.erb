@@ -1,0 +1,40 @@
+<% provide(:title, 'Enter a new book') %>
+  <%= render 'shared/manage_book_partial' %> 
+<h1>Enter a new book</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@book) do |f| %>
+
+
+        <%= f.label :isbn %>
+        <%= f.text_field :id, class: 'form-control' %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
+
+        <%= f.label :status %>
+        <%= f.text_field :status , class: 'form-control' %>
+
+        <%= f.label :author1 %>
+        <%= f.text_field :author1 , class: 'form-control' %>
+
+        <%= f.label :author2 %>
+        <%= f.text_field :author2 , class: 'form-control' %>
+
+        <%= f.label :author3 %>
+        <%= f.text_field :author3 , class: 'form-control' %>
+
+        <%= f.label :author4 %>
+        <%= f.text_field :author4 , class: 'form-control' %>
+
+        <%= f.label :author5 %>
+        <%= f.text_field :author5 , class: 'form-control' %>
+
+        <%= f.submit "Add new book", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

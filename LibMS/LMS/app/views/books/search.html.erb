@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>ISBN</th>
+  </tr>
+  <%= @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title_before_type_cast, book_path(book) %></td>
+        <td><%= book.id_before_type_cast  %></td>
+        <td><%= book.status_before_type_cast %></td>
+        <% if book.status == 'A' %>
+            <td><%= link_to 'Check out', "/checkout",  method: :post, :book => book.id  %></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>

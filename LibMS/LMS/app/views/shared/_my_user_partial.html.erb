@@ -1,0 +1,13 @@
+<div class="row">
+  <aside class="col-md-10">
+    <section class="user_info">
+      <p>
+        <%= link_to "My home", current_user, class: "btn btn-lg btn-primary" %>
+        <%= link_to "Account Info", profile_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "Checked Out", profile_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "View history", profile_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-lg btn-primary" %><br><br><br>
+      </p>
+    </section>
+  </aside>
+</div>

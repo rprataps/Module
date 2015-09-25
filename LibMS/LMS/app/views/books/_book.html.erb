@@ -1,0 +1,6 @@
+<li>
+ <p><font size="3" color='red'> <%= book.title %> </font></p>
+    | <%= link_to "delete", book, method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+    | <%= link_to "view_book", view_book_path(:id => book.id) %>
+</li>

@@ -1,0 +1,32 @@
+
+<%@user= current_user%>
+<% counter=0%>
+
+<h4>Name&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+ ISBN Description Checkout_date return date returned </h4>
+
+
+
+<%history=User.checkoutquery(@user.id)%>
+
+    <% history.each do |his|%>
+
+        <%history1=Checkout.checkoutque(his.books_id)%>
+
+        <% history1.each do |var|%>
+        </br>
+           <%=var.title%> &nbsp; &nbsp; <%=var.description%>&nbsp; &nbsp;&nbsp; &nbsp;
+           <% counter=1%>
+        <%end%>
+
+       <%if counter==1%>
+            <%=his.books_id%> &nbsp;&nbsp;&nbsp; &nbsp;
+            <%=his.checkout_date%>&nbsp;&nbsp;&nbsp; &nbsp;
+            <%=his.return_date%> &nbsp;&nbsp;&nbsp; &nbsp; <%=his.returned%>
+
+        <%end%>
+    <%end%>
+
+<%if counter==0%>
+<h1>No records found</h1>
+<%end%>

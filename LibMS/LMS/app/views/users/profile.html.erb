@@ -1,0 +1,15 @@
+<script> /*<h4 style="text-align:left"><font color = "black" size="5"> Profile details</font><br></h4> */ </script>
+<% provide(:title, current_user.first_name) %>
+  <% if current_user.user_type == "user" %>
+    <%= render 'shared/my_user_partial' %>
+  <% else %>
+    <%= render 'my_admin_home_page' %>
+  <% end %> 
+  <p><font size="3" color="Green">
+  Name:&nbsp;&nbsp;<%= current_user.first_name%><%=current_user.middle_name%><br>
+  Email-id:&nbsp;&nbsp;<%= current_user.email%><br>
+  Phone Number:&nbsp;&nbsp;<%= current_user.phone_number%><br>
+  Address:<br><%= current_user.address_street%> , <%= current_user.address_house%> <br> 
+  <%=current_user.address_state%><br>
+  </font>
+  </p>

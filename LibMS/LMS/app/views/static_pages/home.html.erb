@@ -1,0 +1,10 @@
+<div class="center jumbotron">
+  <%= link_to image_tag("library11.jpg", alt: "Library logo") %>
+<script>/*  <%= link_to "Sign up as user!", signup_path, class: "btn btn-lg btn-primary" %> */</script>
+</div>
+
+<h2>Welcome to CSC-517 Library</h2>
+<%= form_tag(root_path, :method => "get") do %>
+  <%= text_field_tag :search, params[:search]  %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
